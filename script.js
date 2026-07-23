@@ -87,26 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Mobile Menu Toggle
+  // 4. Mobile Menu Toggle with Smooth Class State & Link Auto-Close
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
-      const isOpen = navMenu.style.display === 'flex';
-      if (isOpen) {
-        navMenu.style.display = 'none';
-      } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '84px';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.backgroundColor = '#FFFFFF';
-        navMenu.style.padding = '24px';
-        navMenu.style.boxShadow = '0 12px 24px rgba(0,0,0,0.1)';
-      }
+      navMenu.classList.toggle('is-open');
+      mobileToggle.classList.toggle('is-active');
+    });
+
+    // Close mobile menu when clicking any nav link
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        mobileToggle.classList.remove('is-active');
+      });
     });
   }
 
