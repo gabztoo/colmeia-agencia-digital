@@ -828,6 +828,249 @@
     </div>
   </footer>
 
+  <!-- ==========================================
+       FUNIL DE QUALIFICAÇÃO INTERATIVO (MODAL)
+       ========================================== -->
+  <div class="funnel-modal" id="funnelModal" aria-hidden="true" role="dialog" aria-labelledby="funnelTitle">
+    <div class="funnel-backdrop" id="funnelBackdrop"></div>
+    <div class="funnel-container">
+      
+      <!-- Modal Header -->
+      <div class="funnel-header">
+        <div class="funnel-brand">
+          <img src="assets/logo.png" alt="Colmeia Logo" class="funnel-logo">
+          <div>
+            <h3 id="funnelTitle" class="funnel-title">Diagnóstico de Crescimento</h3>
+            <span class="funnel-step-indicator" id="stepIndicator">Etapa 1 de 5</span>
+          </div>
+        </div>
+        <button class="funnel-close-btn" id="closeFunnelBtn" aria-label="Fechar Modal">&times;</button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="funnel-progress-track">
+        <div class="funnel-progress-fill" id="funnelProgress" style="width: 20%;"></div>
+      </div>
+
+      <!-- Modal Body (Steps) -->
+      <div class="funnel-body">
+        
+        <!-- STEP 1: OBJETIVO -->
+        <div class="funnel-step active" data-step="1">
+          <span class="funnel-eyebrow">PASSO 1 DE 4</span>
+          <h2 class="funnel-step-question">Qual o objetivo principal da sua empresa hoje?</h2>
+          <p class="funnel-step-subtext">Selecione a opção que melhor se alinha com o que você precisa agora:</p>
+          
+          <div class="funnel-options-grid">
+            <button type="button" class="funnel-option-card" data-key="objetivo" data-value="Gerar Vendas & Leads Qualificados (Tráfego Pago / Marketing)">
+              <div class="option-icon">🎯</div>
+              <div class="option-content">
+                <strong>Gerar Vendas & Leads Qualificados</strong>
+                <span>Atrair mais clientes compradores diariamente.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="objetivo" data-value="Automatizar Atendimento & Processos (WhatsApp/CRM)">
+              <div class="option-icon">⚙️</div>
+              <div class="option-content">
+                <strong>Automatizar Atendimento & Processos</strong>
+                <span>Agilizar conversões no WhatsApp e organizar vendas.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="objetivo" data-value="Criar / Reformular Site, Landing Page ou Sistema">
+              <div class="option-icon">💻</div>
+              <div class="option-content">
+                <strong>Criar ou Reformular Site / Landing Page</strong>
+                <span>Um site profissional e de altíssima conversão.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="objetivo" data-value="Consultoria Completa de Crescimento 360°">
+              <div class="option-icon">🚀</div>
+              <div class="option-content">
+                <strong>Consultoria Completa de Crescimento 360°</strong>
+                <span>Unificar Marketing, Tecnologia e Automação.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: MOMENTO / FATURAMENTO -->
+        <div class="funnel-step" data-step="2">
+          <span class="funnel-eyebrow">PASSO 2 DE 4</span>
+          <h2 class="funnel-step-question">Qual é o faturamento/fase atual da sua empresa?</h2>
+          <p class="funnel-step-subtext">Isso nos ajuda a desenhar a estratégia adequada para o seu momento:</p>
+          
+          <div class="funnel-options-grid">
+            <button type="button" class="funnel-option-card" data-key="faturamento" data-value="Iniciando agora (Faturamento até R$ 10k/mês)">
+              <div class="option-icon">🟢</div>
+              <div class="option-content">
+                <strong>Fase Inicial / Estruturação</strong>
+                <span>Faturamento até R$ 10.000 / mês</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="faturamento" data-value="Em crescimento (Faturamento R$ 10k a R$ 50k/mês)">
+              <div class="option-icon">🟡</div>
+              <div class="option-content">
+                <strong>Em Crescimento</strong>
+                <span>Faturamento de R$ 10.000 a R$ 50.000 / mês</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="faturamento" data-value="Consolidado (Faturamento R$ 50k a R$ 200k/mês)">
+              <div class="option-icon">🟠</div>
+              <div class="option-content">
+                <strong>Consolidado</strong>
+                <span>Faturamento de R$ 50.000 a R$ 200.000 / mês</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="faturamento" data-value="Grande Empresa (Faturamento +R$ 200k/mês)">
+              <div class="option-icon">💎</div>
+              <div class="option-content">
+                <strong>Grande Empresa / Escala</strong>
+                <span>Faturamento acima de R$ 200.000 / mês</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: ORÇAMENTO -->
+        <div class="funnel-step" data-step="3">
+          <span class="funnel-eyebrow">PASSO 3 DE 4</span>
+          <h2 class="funnel-step-question">Quanto pretende investir mensalmente em crescimento?</h2>
+          <p class="funnel-step-subtext">Valor estimado para estratégia, automação e anúncios:</p>
+          
+          <div class="funnel-options-grid">
+            <button type="button" class="funnel-option-card" data-key="orcamento" data-value="Até R$ 2.000 / mês">
+              <div class="option-icon">💵</div>
+              <div class="option-content">
+                <strong>Até R$ 2.000 / mês</strong>
+                <span>Investimento inicial para primeiros resultados</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="orcamento" data-value="R$ 2.000 a R$ 5.000 / mês">
+              <div class="option-icon">💰</div>
+              <div class="option-content">
+                <strong>R$ 2.000 a R$ 5.000 / mês</strong>
+                <span>Ideal para acelerar aquisição diária de clientes</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="orcamento" data-value="R$ 5.000 a R$ 15.000 / mês">
+              <div class="option-icon">📈</div>
+              <div class="option-content">
+                <strong>R$ 5.000 a R$ 15.000 / mês</strong>
+                <span>Investimento forte para escalar mercado</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="orcamento" data-value="Acima de R$ 15.000 / mês">
+              <div class="option-icon">👑</div>
+              <div class="option-content">
+                <strong>Acima de R$ 15.000 / mês</strong>
+                <span>Investimento corporativo de expansão acelerada</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: URGÊNCIA -->
+        <div class="funnel-step" data-step="4">
+          <span class="funnel-eyebrow">PASSO 4 DE 4</span>
+          <h2 class="funnel-step-question">Qual a urgência para iniciar este projeto?</h2>
+          <p class="funnel-step-subtext">Quando sua empresa deseja ter a solução rodando?</p>
+          
+          <div class="funnel-options-grid">
+            <button type="button" class="funnel-option-card" data-key="urgencia" data-value="Imediata (Iniciar esta semana)">
+              <div class="option-icon">🔥</div>
+              <div class="option-content">
+                <strong>Imediata (Esta semana)</strong>
+                <span>Solução com prioridade máxima no nosso negócio.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="urgencia" data-value="Nos próximos 15 a 30 dias">
+              <div class="option-icon">🗓️</div>
+              <div class="option-content">
+                <strong>Nos próximos 15 a 30 dias</strong>
+                <span>Planejando o início para as próximas semanas.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+
+            <button type="button" class="funnel-option-card" data-key="urgencia" data-value="Apenas pesquisando orçamentos">
+              <div class="option-icon">🔍</div>
+              <div class="option-content">
+                <strong>Pesquisando soluções</strong>
+                <span>Entender opções e custos antes de tomar decisão.</span>
+              </div>
+              <div class="option-check">✓</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 5: CONTATO & ENVIO WHATSAPP -->
+        <div class="funnel-step" data-step="5">
+          <span class="funnel-eyebrow">ÚLTIMA ETAPA</span>
+          <h2 class="funnel-step-question">Tudo pronto! Onde enviar seu Diagnóstico?</h2>
+          <p class="funnel-step-subtext">Preencha abaixo para abrir o seu atendimento qualificado no WhatsApp:</p>
+
+          <form id="funnelForm" class="funnel-contact-form">
+            <div class="form-group">
+              <label for="funnelName">Seu Nome Completo *</label>
+              <input type="text" id="funnelName" placeholder="Ex: João Silva" required>
+            </div>
+
+            <div class="form-group">
+              <label for="funnelCompany">Nome da Empresa ou @Instagram *</label>
+              <input type="text" id="funnelCompany" placeholder="Ex: @clinicasilva ou Silva Mídia" required>
+            </div>
+
+            <div class="form-group">
+              <label for="funnelPhone">Seu WhatsApp com DDD *</label>
+              <input type="tel" id="funnelPhone" placeholder="Ex: (21) 99101-4422" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary funnel-submit-btn">
+              <span>Enviar Diagnóstico para WhatsApp</span>
+              <div class="cta-whatsapp-circle">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+              </div>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer (Voltar Button) -->
+      <div class="funnel-footer">
+        <button type="button" class="funnel-back-btn" id="funnelBackBtn" style="display: none;">
+          ← Voltar etapa
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 

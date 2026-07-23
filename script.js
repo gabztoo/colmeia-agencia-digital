@@ -133,4 +133,143 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal').forEach(el => {
     revealObserver.observe(el);
   });
+
+  // 6. Interactive Multi-Step Qualification Funnel Modal
+  const funnelModal = document.getElementById('funnelModal');
+  const funnelBackdrop = document.getElementById('funnelBackdrop');
+  const closeFunnelBtn = document.getElementById('closeFunnelBtn');
+  const funnelBackBtn = document.getElementById('funnelBackBtn');
+  const funnelProgress = document.getElementById('funnelProgress');
+  const stepIndicator = document.getElementById('stepIndicator');
+  const funnelSteps = document.querySelectorAll('.funnel-step');
+  const funnelForm = document.getElementById('funnelForm');
+
+  let currentStep = 1;
+  const answers = {
+    objetivo: '',
+    faturamento: '',
+    orcamento: '',
+    urgencia: ''
+  };
+
+  function openFunnelModal() {
+    if (!funnelModal) return;
+    funnelModal.classList.add('is-active');
+    funnelModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFunnelModal() {
+    if (!funnelModal) return;
+    funnelModal.classList.remove('is-active');
+    funnelModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function updateStepView() {
+    funnelSteps.forEach(step => {
+      const stepNum = parseInt(step.getAttribute('data-step'), 10);
+      if (stepNum === currentStep) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+
+    if (stepIndicator) {
+      stepIndicator.innerText = `Etapa ${currentStep} de 5`;
+    }
+    if (funnelProgress) {
+      funnelProgress.style.width = `${(currentStep / 5) * 100}%`;
+    }
+
+    if (funnelBackBtn) {
+      funnelBackBtn.style.display = currentStep > 1 ? 'block' : 'none';
+    }
+  }
+
+  // Bind Open Triggers to CTA buttons across the page
+  const ctaButtons = document.querySelectorAll('.header-cta-btn, .hero-buttons .btn-primary, .stats-right .btn, .cta-actions .btn-primary, a[href="#contato"]');
+  ctaButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openFunnelModal();
+    });
+  });
+
+  if (closeFunnelBtn) closeFunnelBtn.addEventListener('click', closeFunnelModal);
+  if (funnelBackdrop) funnelBackdrop.addEventListener('click', closeFunnelModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && funnelModal && funnelModal.classList.contains('is-active')) {
+      closeFunnelModal();
+    }
+  });
+
+  // Handle Option Click (1-click auto advance)
+  document.querySelectorAll('.funnel-option-card').forEach(card => {
+    card.addEventListener('click', function () {
+      const key = this.getAttribute('data-key');
+      const value = this.getAttribute('data-value');
+
+      if (key && value) {
+        answers[key] = value;
+      }
+
+      const parentGrid = this.closest('.funnel-options-grid');
+      if (parentGrid) {
+        parentGrid.querySelectorAll('.funnel-option-card').forEach(item => item.classList.remove('selected'));
+      }
+      this.classList.add('selected');
+
+      setTimeout(() => {
+        if (currentStep < 5) {
+          currentStep++;
+          updateStepView();
+        }
+      }, 250);
+    });
+  });
+
+  // Handle Back Button
+  if (funnelBackBtn) {
+    funnelBackBtn.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        updateStepView();
+      }
+    });
+  }
+
+  // Handle Form Submission -> Format WhatsApp Message
+  if (funnelForm) {
+    funnelForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('funnelName')?.value.trim() || '';
+      const company = document.getElementById('funnelCompany')?.value.trim() || '';
+      const phone = document.getElementById('funnelPhone')?.value.trim() || '';
+
+      const whatsappNumber = '5521991014422';
+
+      const text = `Olá, equipe Colmeia! Preenchi o formulário no site:
+
+👤 *Nome:* ${name}
+🏢 *Empresa:* ${company}
+📱 *WhatsApp:* ${phone}
+
+🎯 *Objetivo:* ${answers.objetivo || 'Não informado'}
+🟢 *Faturamento/Fase:* ${answers.faturamento || 'Não informado'}
+💰 *Investimento Mensal:* ${answers.orcamento || 'Não informado'}
+🔥 *Urgência:* ${answers.urgencia || 'Não informado'}
+
+Gostaria de agendar meu atendimento estratégico!`;
+
+      const encodedText = encodeURIComponent(text);
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+      window.open(whatsappUrl, '_blank');
+      closeFunnelModal();
+    });
+  }
 });
