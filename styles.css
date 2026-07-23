@@ -1896,9 +1896,32 @@ a {
      MOBILE APP-LIKE ENHANCEMENTS
      ========================================================================== */
 
-  /* Reserve space at body bottom for floating action bar */
+  /* Reserve space inside footer for mobile bottom bar */
   body {
-    padding-bottom: 70px;
+    padding-bottom: 0;
+  }
+
+  .site-footer {
+    padding-bottom: 84px !important;
+  }
+
+  /* Clean Mobile Section Boundaries */
+  .stats-banner {
+    position: relative;
+    z-index: 5;
+  }
+
+  .process-section {
+    padding-top: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section {
+    border-radius: 20px;
+    margin-left: 14px;
+    margin-right: 14px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
   }
 
   /* Sticky Floating Bottom Bar */
@@ -1991,48 +2014,20 @@ a {
     50% { transform: translateX(4px); opacity: 1; }
   }
 
-  /* Soft Rounded Section Cards & Smooth Transitions for Mobile */
-  .stats-banner {
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
-    position: relative;
-    z-index: 5;
-    margin-bottom: 0;
-  }
-
-  .process-section {
-    padding-top: 56px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-section {
-    border-radius: 28px;
-    margin-left: 14px;
-    margin-right: 14px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), 0 0 24px rgba(255, 184, 0, 0.12);
-  }
-
-  .site-footer {
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
-    margin-top: -12px;
-  }
-
-  /* Touch Horizontal Scroll Snap Carousels for Services and Cases */
+  /* Perfectly Centered Touch Horizontal Scroll Snap Carousels for Services and Cases */
   .services-grid, .cases-grid {
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scroll-padding-left: calc(50vw - 155px);
     touch-action: pan-x pan-y;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 20px;
+    padding-left: calc(50vw - 155px);
+    padding-right: calc(50vw - 155px);
     margin-left: -18px;
     margin-right: -18px;
-    padding-left: 18px;
-    padding-right: 18px;
     gap: 16px;
     scrollbar-width: none;
   }
@@ -2042,8 +2037,9 @@ a {
   }
 
   .service-card {
-    flex: 0 0 82vw;
-    max-width: 310px;
+    flex: 0 0 310px;
+    width: 310px;
+    max-width: 82vw;
     scroll-snap-align: center;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(229, 231, 235, 0.85);
@@ -2057,8 +2053,9 @@ a {
   }
 
   .case-card {
-    flex: 0 0 82vw;
-    max-width: 310px;
+    flex: 0 0 310px;
+    width: 310px;
+    max-width: 82vw;
     scroll-snap-align: center;
     height: 330px;
     touch-action: pan-x pan-y;
