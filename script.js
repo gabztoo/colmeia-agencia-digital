@@ -315,4 +315,136 @@ Gostaria de agendar meu atendimento estratégico!`;
       closeFunnelModal();
     });
   }
+
+  // 7. On-Page Embedded Qualification Funnel ("Agende sua reunião com nossos especialistas")
+  const inlineFunnel = document.getElementById('inlineFunnel');
+  if (inlineFunnel) {
+    const inlineProgress = document.getElementById('inlineProgress');
+    const inlineStepIndicator = document.getElementById('inlineStepIndicator');
+    const inlineBackBtn = document.getElementById('inlineBackBtn');
+    const inlineSteps = inlineFunnel.querySelectorAll('.inline-step');
+    const inlineForm = document.getElementById('inlineFunnelForm');
+
+    let inlineCurrentStep = 1;
+    const inlineAnswers = {
+      objetivo: '',
+      faturamento: '',
+      orcamento: '',
+      urgencia: ''
+    };
+
+    function updateInlineStepView() {
+      inlineSteps.forEach(step => {
+        const stepNum = parseInt(step.getAttribute('data-inline-step'), 10);
+        if (stepNum === inlineCurrentStep) {
+          step.classList.add('active');
+        } else {
+          step.classList.remove('active');
+        }
+      });
+
+      if (inlineStepIndicator) {
+        inlineStepIndicator.innerText = `Etapa ${inlineCurrentStep} de 5`;
+      }
+      if (inlineProgress) {
+        inlineProgress.style.width = `${(inlineCurrentStep / 5) * 100}%`;
+      }
+
+      if (inlineBackBtn) {
+        inlineBackBtn.style.display = inlineCurrentStep > 1 ? 'block' : 'none';
+      }
+
+      if (inlineCurrentStep === 5) {
+        const recapObj = document.getElementById('inlineRecapObj');
+        const recapFat = document.getElementById('inlineRecapFat');
+        const recapOrc = document.getElementById('inlineRecapOrc');
+        const recapUrg = document.getElementById('inlineRecapUrg');
+
+        if (recapObj) recapObj.innerText = inlineAnswers.objetivo ? `🎯 ${inlineAnswers.objetivo.split('(')[0]}` : '🎯 Objetivo';
+        if (recapFat) recapFat.innerText = inlineAnswers.faturamento ? `🟢 ${inlineAnswers.faturamento.split('(')[0]}` : '🟢 Fase';
+        if (recapOrc) recapOrc.innerText = inlineAnswers.orcamento ? `💰 ${inlineAnswers.orcamento}` : '💰 Orçamento';
+        if (recapUrg) recapUrg.innerText = inlineAnswers.urgencia ? `🔥 ${inlineAnswers.urgencia.split('(')[0]}` : '🔥 Urgência';
+      }
+    }
+
+    const inlinePhoneInput = document.getElementById('inlinePhone');
+    if (inlinePhoneInput) {
+      inlinePhoneInput.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.substring(0, 11);
+        if (v.length > 6) {
+          e.target.value = `(${v.substring(0, 2)}) ${v.substring(2, 7)}-${v.substring(7)}`;
+        } else if (v.length > 2) {
+          e.target.value = `(${v.substring(0, 2)}) ${v.substring(2)}`;
+        } else if (v.length > 0) {
+          e.target.value = `(${v}`;
+        } else {
+          e.target.value = '';
+        }
+      });
+    }
+
+    inlineFunnel.querySelectorAll('.inline-option-card').forEach(card => {
+      card.addEventListener('click', function () {
+        const key = this.getAttribute('data-key');
+        const value = this.getAttribute('data-value');
+
+        if (key && value) {
+          inlineAnswers[key] = value;
+        }
+
+        const parentGrid = this.closest('.funnel-options-grid');
+        if (parentGrid) {
+          parentGrid.querySelectorAll('.inline-option-card').forEach(item => item.classList.remove('selected'));
+        }
+        this.classList.add('selected');
+
+        setTimeout(() => {
+          if (inlineCurrentStep < 5) {
+            inlineCurrentStep++;
+            updateInlineStepView();
+          }
+        }, 220);
+      });
+    });
+
+    if (inlineBackBtn) {
+      inlineBackBtn.addEventListener('click', () => {
+        if (inlineCurrentStep > 1) {
+          inlineCurrentStep--;
+          updateInlineStepView();
+        }
+      });
+    }
+
+    if (inlineForm) {
+      inlineForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('inlineName')?.value.trim() || '';
+        const company = document.getElementById('inlineCompany')?.value.trim() || '';
+        const phone = document.getElementById('inlinePhone')?.value.trim() || '';
+
+        const whatsappNumber = '5521991014422';
+
+        const text = `Olá, equipe Colmeia! Agendei minha Reunião no site:
+
+👤 *Nome:* ${name}
+🏢 *Empresa:* ${company}
+📱 *WhatsApp:* ${phone}
+
+🎯 *Objetivo:* ${inlineAnswers.objetivo || 'Não informado'}
+🟢 *Faturamento/Fase:* ${inlineAnswers.faturamento || 'Não informado'}
+💰 *Investimento Mensal:* ${inlineAnswers.orcamento || 'Não informado'}
+🔥 *Urgência:* ${inlineAnswers.urgencia || 'Não informado'}
+
+Gostaria de confirmar minha reunião estratégica!`;
+
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+  }
 });
