@@ -1905,10 +1905,17 @@ a {
     padding-bottom: 84px !important;
   }
 
-  /* Clean Mobile Section Boundaries */
+  /* Curved Entrances & Exits for All Dark Sections (Mobile Only) */
   .stats-banner {
+    border-radius: 28px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    overflow: hidden;
     position: relative;
     z-index: 5;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 30px rgba(255, 184, 0, 0.12);
   }
 
   .process-section {
@@ -1918,10 +1925,24 @@ a {
   }
 
   .cta-section {
-    border-radius: 20px;
-    margin-left: 14px;
-    margin-right: 14px;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    border-radius: 28px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 30px rgba(255, 184, 0, 0.12);
+  }
+
+  .site-footer {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 84px !important;
+    box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.25);
   }
 
   /* Sticky Floating Bottom Bar */
