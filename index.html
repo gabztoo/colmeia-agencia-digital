@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colmeia - Marketing, Tecnologia e Automação</title>
+  <meta name="description"
+    content="Conectamos sua marca ao crescimento que ela merece. Marketing estratégico, tecnologia e automação para atrair mais clientes e aumentar suas vendas.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+       ========================================== -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo-link" aria-label="Página Inicial Colmeia">
+        <img src="assets/logo.png" alt="Colmeia - Marketing, Tecnologia e Automação" class="logo-img">
+      </a>
+
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-menu">
+          <li>
+            <a href="#home" class="nav-link active">
+              Home
+              <span class="active-bar"></span>
+            </a>
+          </li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#cases" class="nav-link">Cases</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#contato" class="header-cta-btn">
+          Fale Conosco
+          <div class="cta-whatsapp-circle">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </div>
+        </a>
+        <button class="mobile-toggle" aria-label="Abrir Menu">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero-section" id="home">
+
+    <!-- Ambient Floating Wireframe Hexagons Background -->
+    <svg class="hero-ambient-hexagons" viewBox="0 0 100 100" fill="none" stroke="#FFB800" stroke-width="0.4">
+      <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
+      <polygon points="50,15 80,30 80,70 50,85 20,70 20,30" />
+    </svg>
+
+    <div class="container hero-grid">
+
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="eyebrow-tag">AGÊNCIA DIGITAL COMPLETA</div>
+
+        <h1 class="hero-title">
+          Conectamos sua<br>
+          marca ao <span class="text-yellow">crescimento</span><br>
+          que ela merece.
+        </h1>
+
+        <p class="hero-description">
+          Marketing estratégico, tecnologia e automação para atrair mais clientes, aumentar suas vendas e posicionar sua
+          empresa onde ela precisa estar: no topo.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contato" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+            Fale com um Especialista
+          </a>
+          <a href="#servicos" class="btn btn-outline">
+            Ver Nossos Serviços
+          </a>
+        </div>
+
+        <div class="hero-guarantees">
+          <div class="guarantee-item">
+            <div class="guarantee-check">✓</div>
+            <span>Atendimento rápido</span>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-check">✓</div>
+            <span>Estratégias personalizadas</span>
+          </div>
+          <div class="guarantee-item">
+            <div class="guarantee-check">✓</div>
+            <span>Resultados de verdade</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual (Hexagon Laptop + Floating Badges) -->
+      <div class="hero-visual">
+        <div class="hero-hexagon-wrap">
+          <img src="assets/hero-laptop-hexagon.png" alt="Laptop Colmeia na moldura hexagonal amarela"
+            class="hero-laptop-img">
+
+          <!-- Floating Badge 1: + Tráfego -->
+          <div class="floating-badge badge-top-left">
+            <div class="badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2.5"
+                stroke-linecap="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div class="badge-text">
+              <strong>+ Tráfego</strong>
+              <span>Mais visitas qualificadas no seu negócio.</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2: + Clientes -->
+          <div class="floating-badge badge-top-right">
+            <div class="badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2.5"
+                stroke-linecap="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="badge-text">
+              <strong>+ Clientes</strong>
+              <span>Atraímos e convertemos seu público ideal.</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 3: + Resultados -->
+          <div class="floating-badge badge-bottom">
+            <div class="badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2.5"
+                stroke-linecap="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <div class="badge-text">
+              <strong>+ Resultados</strong>
+              <span>Estratégia que gera vendas todos os dias.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CLIENTS / SOCIAL PROOF
+       ========================================== -->
+  <section class="clients-section">
+    <div class="container">
+      <div class="clients-header-row">
+        <h2 class="clients-title">EMPRESAS QUE CONFIAM NO NOSSO TRABALHO</h2>
+      </div>
+
+      <div class="clients-grid">
+        <div class="client-logo-item">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
+          <span>LOGOIPSUM</span>
+        </div>
+        <div class="client-logo-item">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span>LOGOIPSUM</span>
+        </div>
+        <div class="client-logo-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 22h20L12 2z" />
+          </svg>
+          <span>LOGOIPSUM</span>
+        </div>
+        <div class="client-logo-item">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M9 3v18" />
+          </svg>
+          <span>LOGOIPSUM</span>
+        </div>
+      </div>
+
+      <!-- Centered Scroll Invitation Hint -->
+      <div class="scroll-down-hint">
+        <a href="#servicos" class="scroll-hint-btn">
+          <span>Ver Nossas Soluções</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SERVICES SECTION
+       ========================================== -->
+  <section class="services-section" id="servicos">
+    <div class="container">
+      <div class="services-header">
+        <span class="eyebrow eyebrow-center">NOSSOS SERVIÇOS</span>
+        <h2 class="section-title center">Soluções completas para o seu negócio crescer.</h2>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3 class="service-card-title">Gestão de Redes Sociais</h3>
+          <p class="service-card-desc">Conteúdo estratégico que fortalece sua marca e gera conexão com seu público.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Tráfego Pago</h3>
+          <p class="service-card-desc">Campanhas no Google, Instagram, Facebook e TikTok que trazem resultado.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 7a9 9 0 0 1-10 11z" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+          </div>
+          <h3 class="service-card-title">Tráfego Orgânico (SEO)</h3>
+          <p class="service-card-desc">Apareça no Google de forma natural e conquiste mais visibilidade todos os dias.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Criação de Sites</h3>
+          <p class="service-card-desc">Sites modernos, rápidos e otimizados para gerar confiança e conversões.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Google meu Negócio (Google Maps)</h3>
+          <p class="service-card-desc">Mais visibilidade local, avaliações e clientes chegando até você.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+              <circle cx="12" cy="5" r="2"></circle>
+              <path d="M12 7v4"></path>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Automação & IA</h3>
+          <p class="service-card-desc">Automatizamos processos e usamos IA para otimizar tempo e aumentar resultados.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="services-action">
+        <a href="#contato" class="btn btn-outline">Ver todos os serviços</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATS BANNER (DARK SECTION)
+       ========================================== -->
+  <section class="stats-banner">
+
+    <!-- Background Hexagon Wireframes -->
+    <svg class="stats-hex-bg" viewBox="0 0 100 100" fill="none" stroke="#FFB800" stroke-width="0.3">
+      <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
+      <polygon points="90,25 130,45 130,95 90,115 50,95 50,45" />
+    </svg>
+
+    <div class="container stats-grid">
+      <!-- Left Column -->
+      <div class="stats-left">
+        <span class="eyebrow">RESULTADOS QUE FALAM</span>
+        <h2 class="section-title dark">
+          Mais que serviços,<br>entregamos <span class="text-yellow">crescimento.</span>
+        </h2>
+
+        <div class="stats-counters">
+
+          <div class="stat-item">
+            <div class="stat-header-row">
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span class="stat-number">+150</span>
+            </div>
+            <span class="stat-label">Projetos entregues</span>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-header-row">
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span class="stat-number">+98%</span>
+            </div>
+            <span class="stat-label">Clientes satisfeitos</span>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-header-row">
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+              <span class="stat-number">+5M</span>
+            </div>
+            <span class="stat-label">Investido em anúncios</span>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-header-row">
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span class="stat-number">+20</span>
+            </div>
+            <span class="stat-label">Segmentos atendidos</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="stats-right">
+        <p class="stats-right-text">
+          Cada estratégia é pensada para gerar impacto real no seu negócio. Unimos marketing, tecnologia e automação
+          para transformar cliques em clientes e seguidores em fãs.
+        </p>
+
+        <a href="#contato" class="btn btn-primary">
+          Quero crescer meu negócio
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PROCESS SECTION ("NOSSO PROCESSO")
+       ========================================== -->
+  <section class="process-section" id="sobre">
+    <div class="container">
+      <div class="process-header">
+        <span class="eyebrow eyebrow-center">NOSSO PROCESSO</span>
+        <h2 class="section-title center">Estratégia. Execução. Resultado.</h2>
+      </div>
+
+      <div class="process-steps">
+
+        <!-- Step 1 -->
+        <div class="process-card">
+          <div class="process-icon-hex">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <div class="process-num-badge">01</div>
+          <h3 class="process-title">Diagnóstico</h3>
+          <p class="process-desc">Entendemos seu negócio, seus desafios e oportunidades.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-card">
+          <div class="process-icon-hex">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+          </div>
+          <div class="process-num-badge">02</div>
+          <h3 class="process-title">Estratégia</h3>
+          <p class="process-desc">Criamos um plano personalizado com foco em <strong>resultados.</strong></p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-card">
+          <div class="process-icon-hex">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+              </path>
+            </svg>
+          </div>
+          <div class="process-num-badge">03</div>
+          <h3 class="process-title">Execução</h3>
+          <p class="process-desc">Colocamos tudo em ação com monitoramento constante.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-card">
+          <div class="process-icon-hex">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <div class="process-num-badge">04</div>
+          <h3 class="process-title">Otimização</h3>
+          <p class="process-desc">Analisamos, ajustamos e <strong>escalamos o que funciona.</strong></p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="process-card">
+          <div class="process-icon-hex">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <div class="process-num-badge">05</div>
+          <h3 class="process-title">Resultados</h3>
+          <p class="process-desc">Mais visibilidade, clientes e vendas para o seu negócio.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CASES DE SUCESSO
+       ========================================== -->
+  <section class="cases-section" id="cases">
+    <div class="container">
+      <div class="cases-header">
+        <span class="eyebrow eyebrow-center">CASES DE SUCESSO</span>
+        <h2 class="section-title center">Resultados reais de negócios reais.</h2>
+      </div>
+
+      <div class="cases-grid">
+
+        <!-- Case 1 -->
+        <div class="case-card">
+          <img src="assets/case-estetica.jpg" alt="Case Clínica de Estética" class="case-bg-img">
+          <div class="case-overlay"></div>
+
+          <div class="case-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            </svg>
+            <span>Clínica de Estética</span>
+          </div>
+
+          <div class="case-bottom">
+            <h3 class="case-metric">Aumento de 320% em agendamentos online</h3>
+            <p class="case-detail">com tráfego pago e automação.</p>
+            <div class="case-tag-pill">• Agendamentos</div>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card">
+          <img src="assets/case-roupas.jpg" alt="Case Loja de Roupas" class="case-bg-img">
+          <div class="case-overlay"></div>
+
+          <div class="case-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+            </svg>
+            <span>Loja de Roupas</span>
+          </div>
+
+          <div class="case-bottom">
+            <h3 class="case-metric">+185% em vendas no Instagram</h3>
+            <p class="case-detail">com gestão de conteúdo e anúncios.</p>
+            <div class="case-tag-pill">• Vendas</div>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="case-card">
+          <img src="assets/case-restaurante.jpg" alt="Case Restaurante" class="case-bg-img">
+          <div class="case-overlay"></div>
+
+          <div class="case-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Restaurante</span>
+          </div>
+
+          <div class="case-bottom">
+            <h3 class="case-metric">+240% de visitas no Google Maps</h3>
+            <p class="case-detail">com otimização de perfil e avaliações.</p>
+            <div class="case-tag-pill">• Visibilidade</div>
+          </div>
+        </div>
+
+        <!-- Case 4 -->
+        <div class="case-card">
+          <img src="assets/case-idiomas.jpg" alt="Case Escola de Idiomas" class="case-bg-img">
+          <div class="case-overlay"></div>
+
+          <div class="case-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+            <span>Escola de Idiomas</span>
+          </div>
+
+          <div class="case-bottom">
+            <h3 class="case-metric">+150% de leads qualificados</h3>
+            <p class="case-detail">com site novo e campanhas.</p>
+            <div class="case-tag-pill">• Leads</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cases-action">
+        <a href="#contato" class="btn btn-outline">Ver mais cases</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIALS SECTION
+       ========================================== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="eyebrow eyebrow-center">O QUE NOSSOS CLIENTES DIZEM</span>
+        <h2 class="section-title center">Parcerias que geram resultados e confiança.</h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "A Colmeia transformou nosso Instagram e nossas vendas dispararam. Equipe comprometida e <strong>resultado
+                de verdade!"</strong>
+            </p>
+          </div>
+          <div class="testimonial-user">
+            <img src="assets/avatar-juliana.jpg" alt="Juliana Martins" class="user-avatar">
+            <div class="user-info">
+              <strong>Juliana Martins</strong>
+              <span>Loja de Roupas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Nosso perfil no Google nunca <strong>teve tanta visibilidade.</strong> Hoje somos encontrados por muito
+              mais clientes!"
+            </p>
+          </div>
+          <div class="testimonial-user">
+            <img src="assets/avatar-ricardo.jpg" alt="Ricardo Souza" class="user-avatar">
+            <div class="user-info">
+              <strong>Ricardo Souza</strong>
+              <span>Restaurante</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Profissionais incríveis! Entenderam <strong>nosso negócio</strong> e criaram uma <strong>estratégia que
+                trouxe</strong> muitos alunos novos."
+            </p>
+          </div>
+          <div class="testimonial-user">
+            <img src="assets/avatar-camila.jpg" alt="Camila Fernandes" class="user-avatar">
+            <div class="user-info">
+              <strong>Camila Fernandes</strong>
+              <span>Escola de Idiomas</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CALL TO ACTION BANNER (BOTTOM)
+       ========================================== -->
+  <section class="cta-section" id="contato">
+
+    <!-- Background Hexagon Wireframes -->
+    <svg class="cta-hex-left" viewBox="0 0 100 100" fill="none" stroke="#FFB800" stroke-width="0.4">
+      <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
+    </svg>
+    <svg class="cta-hex-right" viewBox="0 0 100 100" fill="none" stroke="#FFB800" stroke-width="0.4">
+      <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
+    </svg>
+
+    <div class="container cta-grid">
+      <div class="cta-left">
+        <h2 class="cta-title">
+          Pronto para levar seu negócio para o <span class="text-yellow">próximo nível?</span>
+        </h2>
+        <p class="cta-text">
+          Fale agora com um especialista e receba um plano estratégico personalizado para o seu negócio crescer de
+          verdade.
+        </p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="https://wa.me/559221991014422" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+          Fale com um Especialista
+        </a>
+        <span class="whatsapp-note">ou chame no WhatsApp</span>
+        <a href="tel:+559221991014422" class="whatsapp-phone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2.2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          (21) 99101-4422
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer" id="blog">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Colmeia Agência Digital" class="footer-logo">
+          <p class="footer-brand-desc">
+            Conectamos sua marca ao crescimento através de estratégias inteligentes, tecnologia e automação.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div>
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#cases">Cases</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div>
+          <h4 class="footer-col-title">Serviços</h4>
+          <ul class="footer-links">
+            <li><a href="#servicos">Redes Sociais</a></li>
+            <li><a href="#servicos">Tráfego Pago</a></li>
+            <li><a href="#servicos">SEO (Orgânico)</a></li>
+            <li><a href="#servicos">Criação de Sites</a></li>
+            <li><a href="#servicos">Google Maps</a></li>
+            <li><a href="#servicos">Automação & IA</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="footer-col-title">Contato</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <span class="text-yellow">📞</span>
+              <span>(21) 99101-4422</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="text-yellow">✉️</span>
+              <span>contato@colmeia.agencia</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="text-yellow">📍</span>
+              <span>Manaus - AM</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="text-yellow">🕒</span>
+              <span>Seg - Sex: 08h às 18h</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Colmeia Agência Digital. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
