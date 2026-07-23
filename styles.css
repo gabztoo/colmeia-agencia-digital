@@ -1020,6 +1020,10 @@ a {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
   transition: transform 0.6s ease;
 }
 
@@ -1035,6 +1039,9 @@ a {
   height: 100%;
   background: linear-gradient(180deg, rgba(10, 10, 12, 0.4) 0%, rgba(10, 10, 12, 0.95) 85%);
   z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .case-top {
@@ -1984,11 +1991,42 @@ a {
     50% { transform: translateX(4px); opacity: 1; }
   }
 
+  /* Soft Rounded Section Cards & Smooth Transitions for Mobile */
+  .stats-banner {
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+    position: relative;
+    z-index: 5;
+    margin-bottom: 0;
+  }
+
+  .process-section {
+    padding-top: 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section {
+    border-radius: 28px;
+    margin-left: 14px;
+    margin-right: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), 0 0 24px rgba(255, 184, 0, 0.12);
+  }
+
+  .site-footer {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    margin-top: -12px;
+  }
+
   /* Touch Horizontal Scroll Snap Carousels for Services and Cases */
   .services-grid, .cases-grid {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    touch-action: pan-x pan-y;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 20px;
     margin-left: -18px;
@@ -2009,6 +2047,7 @@ a {
     scroll-snap-align: center;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(229, 231, 235, 0.85);
+    touch-action: pan-x pan-y;
     transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
@@ -2022,6 +2061,8 @@ a {
     max-width: 310px;
     scroll-snap-align: center;
     height: 330px;
+    touch-action: pan-x pan-y;
+    overflow: hidden;
     transition: transform 0.2s ease;
   }
 
