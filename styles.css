@@ -221,6 +221,12 @@ a {
   margin-top: 4px;
 }
 
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .header-cta-btn {
   background-color: var(--color-yellow);
   color: #000000;
@@ -1448,7 +1454,7 @@ a {
 /* Mobile Devices (<= 768px) */
 @media (max-width: 768px) {
   :root {
-    --header-height: 80px;
+    --header-height: 76px;
   }
 
   .container {
@@ -1460,7 +1466,21 @@ a {
   }
 
   .logo-img {
-    height: 62px;
+    height: 56px;
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  .header-cta-btn {
+    padding: 9px 16px;
+    font-size: 0.825rem;
+    height: 38px;
+    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.2);
   }
 
   /* Mobile Toggle Button (Min 44x44px Touch Target) */
@@ -1474,6 +1494,7 @@ a {
     background: rgba(0, 0, 0, 0.04);
     color: #0F172A;
     transition: background-color 0.2s ease;
+    flex-shrink: 0;
   }
 
   .mobile-toggle:active, .mobile-toggle.is-active {
@@ -1644,47 +1665,150 @@ a {
     padding: 28px 20px;
   }
 
-  /* Stats Banner Mobile */
+  /* Stats Banner Mobile (2x2 Grid) */
   .stats-banner {
-    padding: 60px 0;
+    padding: 50px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
   }
 
   .stats-counters {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 12px;
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 12px;
+    text-align: center;
+  }
+
+  .stat-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .stat-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-yellow);
   }
 
   .stat-number {
-    font-size: 2.1rem;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: #94A3B8;
+    text-align: center;
+  }
+
+  .stats-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stats-right-text {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .stats-right .btn {
+    width: 100%;
+    min-height: 48px;
   }
 
   /* Process Vertical Timeline Mobile */
+  .process-section {
+    padding: 50px 0;
+  }
+
   .process-steps {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: flex-start;
-    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    padding-left: 0;
+  }
+
+  .process-steps::before {
+    display: none;
   }
 
   .process-card {
+    display: flex;
+    flex-direction: row;
     align-items: flex-start;
+    gap: 14px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 18px 16px;
     text-align: left;
-    padding-left: 48px;
-    position: relative;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
   }
 
   .process-icon-hex {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 42px;
-    height: 42px;
+    position: static;
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
     margin-bottom: 0;
+    flex-shrink: 0;
+    box-shadow: none;
   }
 
-  .process-card .process-num-badge {
-    margin-bottom: 6px;
+  .process-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .process-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .process-num-badge {
+    margin-bottom: 0;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+  }
+
+  .process-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    color: var(--color-text);
+  }
+
+  .process-desc {
+    font-size: 0.84rem;
+    color: var(--color-muted);
+    line-height: 1.45;
   }
 
   /* Cases Grid Mobile */
@@ -1764,12 +1888,13 @@ a {
 /* Small Smartphone Screen Adjustments (<= 480px) */
 @media (max-width: 480px) {
   .logo-img {
-    height: 52px;
+    height: 48px;
   }
 
   .header-cta-btn {
-    padding: 10px 16px;
-    font-size: 0.85rem;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    gap: 6px;
   }
 
   .cta-whatsapp-circle {
@@ -1788,9 +1913,5 @@ a {
   .badge-text strong {
     font-size: 0.75rem;
     margin-bottom: 0;
-  }
-
-  .stats-counters {
-    grid-template-columns: 1fr;
   }
 }
