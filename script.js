@@ -186,12 +186,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (funnelBackBtn) {
       funnelBackBtn.style.display = currentStep > 1 ? 'block' : 'none';
     }
+
+    // Populate Step 5 Live Recap Tags
+    if (currentStep === 5) {
+      const recapObj = document.getElementById('recapObjetivo');
+      const recapFat = document.getElementById('recapFaturamento');
+      const recapOrc = document.getElementById('recapOrcamento');
+      const recapUrg = document.getElementById('recapUrgencia');
+
+      if (recapObj) recapObj.innerText = answers.objetivo ? `🎯 ${answers.objetivo.split('(')[0]}` : '🎯 Objetivo';
+      if (recapFat) recapFat.innerText = answers.faturamento ? `🟢 ${answers.faturamento.split('(')[0]}` : '🟢 Fase Atual';
+      if (recapOrc) recapOrc.innerText = answers.orcamento ? `💰 ${answers.orcamento}` : '💰 Orçamento';
+      if (recapUrg) recapUrg.innerText = answers.urgencia ? `🔥 ${answers.urgencia.split('(')[0]}` : '🔥 Urgência';
+    }
   }
 
-  // Bind Open Triggers to CTA buttons across the page
-  const ctaButtons = document.querySelectorAll('.header-cta-btn, .hero-buttons .btn-primary, .stats-right .btn, .cta-actions .btn-primary, a[href="#contato"]');
-  ctaButtons.forEach(btn => {
+  // Universal Event Listener to Open Funnel Modal on ALL Action Buttons
+  const allFunnelTriggers = document.querySelectorAll(`
+    .header-cta-btn,
+    .btn,
+    .scroll-hint-btn,
+    a[href="#contato"],
+    a[href*="wa.me"],
+    [data-open-funnel="true"]
+  `);
+
+  allFunnelTriggers.forEach(btn => {
+    // Avoid triggering funnel on close button or inside modal submit button
+    if (btn.closest('.funnel-modal')) return;
+
     btn.addEventListener('click', (e) => {
+      // Prevent default navigation / jumping
       e.preventDefault();
       openFunnelModal();
     });
@@ -205,6 +230,24 @@ document.addEventListener('DOMContentLoaded', () => {
       closeFunnelModal();
     }
   });
+
+  // Phone input auto-masking: (XX) XXXXX-XXXX
+  const phoneInput = document.getElementById('funnelPhone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.substring(0, 11);
+      if (v.length > 6) {
+        e.target.value = `(${v.substring(0, 2)}) ${v.substring(2, 7)}-${v.substring(7)}`;
+      } else if (v.length > 2) {
+        e.target.value = `(${v.substring(0, 2)}) ${v.substring(2)}`;
+      } else if (v.length > 0) {
+        e.target.value = `(${v}`;
+      } else {
+        e.target.value = '';
+      }
+    });
+  }
 
   // Handle Option Click (1-click auto advance)
   document.querySelectorAll('.funnel-option-card').forEach(card => {
@@ -227,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
           currentStep++;
           updateStepView();
         }
-      }, 250);
+      }, 220);
     });
   });
 
@@ -252,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const whatsappNumber = '5521991014422';
 
-      const text = `Olá, equipe Colmeia! Preenchi o formulário no site:
+      const text = `Olá, equipe Colmeia! Preenchi o formulário de Diagnóstico no site:
 
 👤 *Nome:* ${name}
 🏢 *Empresa:* ${company}
