@@ -152,11 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
     urgencia: ''
   };
 
+  const mobileBottomBar = document.getElementById('mobileBottomBar');
+
   function openFunnelModal() {
     if (!funnelModal) return;
     funnelModal.classList.add('is-active');
     funnelModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    if (mobileBottomBar) mobileBottomBar.classList.add('is-hidden');
   }
 
   function closeFunnelModal() {
@@ -164,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     funnelModal.classList.remove('is-active');
     funnelModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (mobileBottomBar) mobileBottomBar.classList.remove('is-hidden');
   }
 
   function updateStepView() {
@@ -446,5 +450,22 @@ Gostaria de confirmar minha reunião estratégica!`;
         window.open(whatsappUrl, '_blank');
       });
     }
+  }
+
+  // 7. Mobile Bottom Bar Scroll Management
+  let lastScrollY = window.scrollY;
+  const bottomBar = document.getElementById('mobileBottomBar');
+
+  if (bottomBar) {
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      // If scrolling down fast, hide bar to maximize screen space; show when scrolling up or at top
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        bottomBar.classList.add('is-hidden');
+      } else {
+        bottomBar.classList.remove('is-hidden');
+      }
+      lastScrollY = currentScrollY;
+    }, { passive: true });
   }
 });

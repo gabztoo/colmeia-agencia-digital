@@ -1852,6 +1852,7 @@ a {
   /* Footer Mobile */
   .site-footer {
     padding-top: 50px;
+    padding-bottom: 90px; /* Extra padding for bottom floating bar */
   }
 
   .footer-top {
@@ -1882,6 +1883,150 @@ a {
 
   .footer-contact-item {
     justify-content: center;
+  }
+
+  /* ==========================================================================
+     MOBILE APP-LIKE ENHANCEMENTS
+     ========================================================================== */
+
+  /* Reserve space at body bottom for floating action bar */
+  body {
+    padding-bottom: 70px;
+  }
+
+  /* Sticky Floating Bottom Bar */
+  .mobile-bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 58px;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 184, 0, 0.35);
+    border-radius: 999px;
+    padding: 5px 8px;
+    z-index: 9999;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 16px rgba(255, 184, 0, 0.18);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+
+  .mobile-bottom-bar.is-hidden {
+    transform: translateY(100px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mobile-bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94A3B8;
+    font-size: 0.65rem;
+    font-weight: 700;
+    gap: 2px;
+    padding: 6px 10px;
+    border-radius: 99px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .mobile-bottom-item:active {
+    color: var(--color-yellow);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-bottom-primary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #FFB800 0%, #E5A600 100%);
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 9px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(255, 184, 0, 0.35);
+    transition: transform 0.15s ease;
+    flex: 1;
+    margin: 0 4px;
+    white-space: nowrap;
+  }
+
+  .mobile-bottom-primary-btn:active {
+    transform: scale(0.96);
+  }
+
+  /* Mobile Swipe Hint Badge */
+  .mobile-swipe-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    color: var(--color-yellow);
+    background: rgba(255, 184, 0, 0.08);
+    border: 1px solid rgba(255, 184, 0, 0.22);
+    padding: 5px 14px;
+    border-radius: 99px;
+    letter-spacing: 0.02em;
+    animation: pulseSwipeHint 2s infinite;
+  }
+
+  @keyframes pulseSwipeHint {
+    0%, 100% { transform: translateX(0); opacity: 0.9; }
+    50% { transform: translateX(4px); opacity: 1; }
+  }
+
+  /* Touch Horizontal Scroll Snap Carousels for Services and Cases */
+  .services-grid, .cases-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    margin-left: -18px;
+    margin-right: -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    gap: 16px;
+    scrollbar-width: none;
+  }
+
+  .services-grid::-webkit-scrollbar, .cases-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-card {
+    flex: 0 0 82vw;
+    max-width: 310px;
+    scroll-snap-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(229, 231, 235, 0.85);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .service-card:active {
+    transform: scale(0.98);
+    border-color: var(--color-yellow);
+  }
+
+  .case-card {
+    flex: 0 0 82vw;
+    max-width: 310px;
+    scroll-snap-align: center;
+    height: 330px;
+    transition: transform 0.2s ease;
+  }
+
+  .case-card:active {
+    transform: scale(0.98);
   }
 }
 
